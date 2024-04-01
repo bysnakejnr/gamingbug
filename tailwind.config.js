@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'game-pattern': "url('../public/1.png')",
+      }
+    },
   },
   plugins: [],
 }
