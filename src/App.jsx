@@ -16,8 +16,25 @@ function App() {
 
   return (
       <>
-      <Navbar />
-          <div className="bg-game-pattern bg-100"></div>
+
+          <div className="bg-game-pattern border-red h-screen  ">
+
+          <Navbar/>
+              <h1 className="heavy-font text-8xl mt-40 ms-40">GROG N GLORY</h1>
+              <div className="ms-40 items-center flex">
+                  <a className="border " href="https://store.steampowered.com/app/2835500/Grog_n_Glory/">
+                      <div className="video-container">
+                      <video width={"320"} autoPlay loop muted className="video rounded-full opacity-90 ">
+                          <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
+                          Your browser does not support the video tag.
+                      </video>
+                      </div>
+                  </a>
+                  <h1 className="heavy-font text-4xl ms-5 inline-block align-middle">Coming <br />Soon</h1>
+              </div>
+
+          </div>
+          <h1>Hello</h1>
       </>
   )
 }

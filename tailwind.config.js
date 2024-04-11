@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'game-pattern': "url('../public/1.png')",
+        'game-pattern': "url('../public/background-mnpg.png')",
       }
     },
   },
