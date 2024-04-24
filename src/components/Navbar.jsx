@@ -45,16 +45,17 @@ function Navbar() {
                                         />
                                     </div>
                                     <div className="hidden sm:ml-6 sm:block">
-                                        <div className="flex space-x-4">
+                                        <div className="navbar flex space-x-4">
 
-                                            <a href="#" className=
-                                                'text-black text-gray-300 hover:bg-gray-700
+                                            <a href="#"
+                                               className='relative group text-black text-gray-100 transition-all duration-100
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium
-                                                  dark:bg-gray-900 dark:text-white text-gray-300 hover:bg-gray-700
+                                                  dark:text-black text-gray-100
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium'
 
-                                            >
-                                                Anasayfa
+                                            ><span
+                                                className="absolute bottom-0 left-0 w-0 h-1 bg-white group-hover:w-full group-hover:transition-all group-hover:duration-100 ease-in-out hover:transition-all dark:transition-all hover:duration-300 dark:duration-300"></span>
+                                                Homepage
                                             </a>
                                             <a href="#" className=
                                                 'text-black text-gray-300 hover:bg-gray-700
@@ -63,7 +64,7 @@ function Navbar() {
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium'
 
                                             >
-                                                Hakkımızda
+                                                About Us
                                             </a>
                                             <a href="#" className=
                                                 'text-black text-gray-300 hover:bg-gray-700
@@ -72,7 +73,7 @@ function Navbar() {
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium'
 
                                             >
-                                                Oyunlarımız
+                                                Our Games
                                             </a>
                                             <a href="#" className=
                                                 'bg-gray-300 text-black text-gray-300 hover:bg-gray-700
@@ -81,7 +82,7 @@ function Navbar() {
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium'
 
                                             >
-                                                Ekibimiz
+                                                Our Team
                                             </a>
                                             <a href="#" className=
                                                 'bg-gray-300 text-black text-gray-300 hover:bg-gray-700
@@ -90,7 +91,7 @@ function Navbar() {
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium'
 
                                             >
-                                                İletişim
+                                                Contact Us
                                             </a>
 
                                         </div>
