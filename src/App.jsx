@@ -18,24 +18,45 @@ function App() {
       <>
 
           <div className="bg-game-pattern border-red h-screen ">
-
               <Navbar/>
-              <div className="grid mx-auto content-end items-center text-center">
-              <h1 className="heavy-font text-8xl">GROG N GLORY</h1>
-              <div className="items-center flex">
-                  <a className="border " href="https://store.steampowered.com/app/2835500/Grog_n_Glory/">
-                      <div className="video-container">
-                          <video width={"320"} autoPlay loop muted className="video rounded-full opacity-90 ">
-                              <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
-                              Your browser does not support the video tag.
-                          </video>
+              <div className="flex-col mt-16">
+                  <div className="text-center">
+                      <h1 className="heavy-font text-8xl">GROG N GLORY</h1>
+                      <div className="flex flex-wrap items-center justify-center">
+                          <a href="https://store.steampowered.com/app/2835500/Grog_n_Glory/">
+                              <div className="block video-container mt-4">
+                                  <video width={"320"} autoPlay loop muted className="video rounded-full opacity-90 ">
+                                      <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
+                                      Your browser does not support the video tag.
+                                  </video>
+
+                              </div>
+                              <div className="video-container-overlay">Hello</div>
+                          </a>
+                          <div className="text-center"><h1 className="heavy-font text-4xl ms-5">Coming <br/>Soon</h1>
+                          </div>
+
                       </div>
-                  </a>
-                  <h1 className="heavy-font text-4xl ms-5 inline-block align-middle">Coming <br/>Soon</h1>
+                  </div>
               </div>
+              <div className="trans-background max-w-sm mx-auto mt-24 rounded overflow-hidden shadow-md">
+
+                  <div className="px-6 py-4">
+                      <div className="heavy-font text-xl mb-2">Who are we?</div>
+                      <p className="text-gray-700 font-medium text-base">
+                          We’re not your average game development studio – we’re a tribe of experienced developers and designers who are passionate about creating games that are both fun and innovative. We don’t just create games, we create experiences.
+                          Gaming Bug is a dynamic and innovative game development studio that thrives on crafting unforgettable experiences for players of all ages.
+                      </p>
+                  </div>
+                  <div className="px-6 pt-4 items-end justify-end text-end pb-2">
+                      <a href="#"
+                          className="items-end text-end justify-end bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn More</a>
+
+                  </div>
               </div>
           </div>
-          <div className="container">
+<h1>OUR GAMES</h1>
+          <div className="container-slide">
               <ul id="cards">
                   <li className="card" id="card1">
                       <div className="card-body">
