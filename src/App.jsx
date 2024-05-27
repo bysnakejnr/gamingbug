@@ -1,6 +1,6 @@
 import './assets/App.css'
 import Navbar from "./components/Navbar.jsx";
-
+import Games from "./components/Games.jsx";
 
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
@@ -14,72 +14,61 @@ function classNames(...classes) {
 }
 function App() {
 
+
+        const handleVideoClick = () => {
+            window.location.href = 'https://store.steampowered.com/app/2835500/Grog_n_Glory/';
+        };
+
   return (
       <>
 
           <div className="bg-game-pattern border-red h-screen ">
               <Navbar/>
-              <div className="flex-col mt-16">
-                  <div className="text-center">
+              <div className="main-container">
+
                       <h1 className="heavy-font text-8xl">GROG N GLORY</h1>
-                      <div className="flex flex-wrap items-center justify-center">
-                          <a href="https://store.steampowered.com/app/2835500/Grog_n_Glory/">
-                              <div className="block video-container mt-4">
-                                  <video width={"320"} autoPlay loop muted className="video rounded-full opacity-90 ">
+
+
+
+                          <div className="container">
+                                  <video width={"320"} autoPlay loop muted className="image rounded-full opacity-90" onClick={handleVideoClick}>
                                       <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
                                       Your browser does not support the video tag.
                                   </video>
-
-                              </div>
-                              <div className="video-container-overlay">Hello</div>
-                          </a>
-                          <div className="text-center"><h1 className="heavy-font text-4xl ms-5">Coming <br/>Soon</h1>
+                                  <div className="overlay">
+                                      <div className="text">Hello World</div>
+                                  </div>
                           </div>
 
-                      </div>
-                  </div>
+
+
+
+
+
+
               </div>
               <div className="trans-background max-w-sm mx-auto mt-24 rounded overflow-hidden shadow-md">
 
                   <div className="px-6 py-4">
-                      <div className="heavy-font text-xl mb-2">Who are we?</div>
+                  <div className="heavy-font text-xl mb-2">Who are we?</div>
                       <p className="text-gray-700 font-medium text-base">
-                          We’re not your average game development studio – we’re a tribe of experienced developers and designers who are passionate about creating games that are both fun and innovative. We don’t just create games, we create experiences.
-                          Gaming Bug is a dynamic and innovative game development studio that thrives on crafting unforgettable experiences for players of all ages.
+                          We’re not your average game development studio – we’re a tribe of experienced developers and
+                          designers who are passionate about creating games that are both fun and innovative. We don’t
+                          just create games, we create experiences.
+                          Gaming Bug is a dynamic and innovative game development studio that thrives on crafting
+                          unforgettable experiences for players of all ages.
                       </p>
                   </div>
                   <div className="px-6 pt-4 items-end justify-end text-end pb-2">
                       <a href="#"
-                          className="items-end text-end justify-end bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn More</a>
+                         className="items-end text-end justify-end bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn
+                          More</a>
 
                   </div>
               </div>
           </div>
-<h1>OUR GAMES</h1>
-          <div className="container-slide">
-              <ul id="cards">
-                  <li className="card" id="card1">
-                      <div className="card-body">
-                          <h2>Card 1</h2>
-                      </div>
-                  </li>
-                  <li className="card" id="card2">
-                      <div className="card-body">
-                          <h2>Card 2</h2>
-                      </div>
-                  </li>
-                  <li className="card" id="card3">
-                      <div className="card-body">
-                          <h2>Card 3</h2>
-                      </div>
-                  </li>
-                  <li className="card" id="card4">
-                      <div className="card-body">
-                          <h2>Card 4</h2>
-                      </div>
-                  </li>
-              </ul>
-          </div>
+
+          <Games/>
       </>
   )
 }
