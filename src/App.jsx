@@ -1,6 +1,7 @@
 import './assets/App.css'
 import Navbar from "./components/Navbar.jsx";
 import Games from "./components/Games.jsx";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
@@ -26,28 +27,31 @@ function App() {
               <Navbar/>
               <div className="main-container">
 
-                      <h1 className="heavy-font text-8xl">GROG N GLORY</h1>
+                      <h1 className="heavy-font text-8xl">GROG N GLORY!</h1>
 
 
-
-                          <div className="container">
+<div className="container3 sm:flex-row flex-col">
+                          <div className="container2 m-4">
                                   <video width={"320"} autoPlay loop muted className="image rounded-full opacity-90" onClick={handleVideoClick}>
                                       <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
                                       Your browser does not support the video tag.
                                   </video>
-                                  <div className="overlay">
-                                      <div className="text">Hello World</div>
+                                  <div className="overlay" onClick={handleVideoClick}>
+
+                                      <div className="text"><i className="bi bi-steam mx-2"></i>Go to game</div>
                                   </div>
                           </div>
-
-
+                  <div className="container2">
+                  <div className="justify-center items-center sm:text-left text-center"><h1 className="heavy-font text-4xl">Coming <br/>Soon!</h1></div>
+                  </div>
+</div>
 
 
 
 
 
               </div>
-              <div className="trans-background max-w-sm mx-auto mt-24 rounded overflow-hidden shadow-md">
+              <div className="trans-background max-w-sm mt-24 rounded overflow-hidden shadow-md">
 
                   <div className="px-6 py-4">
                   <div className="heavy-font text-xl mb-2">Who are we?</div>
