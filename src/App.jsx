@@ -1,7 +1,9 @@
 import './assets/App.css'
 import Navbar from "./components/Navbar.jsx";
 import Games from "./components/Games.jsx";
+import Team from "./components/Team.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
@@ -23,7 +25,7 @@ function App() {
   return (
       <>
 
-          <div className="bg-game-pattern border-red h-screen ">
+          <div className="bg-game-pattern border-red h-screen bg-cover min-h-full " style={{"min-height": "1000px"}}>
               <Navbar/>
               <div className="main-container">
 
@@ -51,7 +53,7 @@ function App() {
 
 
               </div>
-              <div className="trans-background max-w-sm mt-24 rounded overflow-hidden shadow-md">
+              <div className="trans-background mx-auto max-w-sm mt-72 rounded overflow-hidden shadow-md">
 
                   <div className="px-6 py-4">
                   <div className="heavy-font text-xl mb-2">Who are we?</div>
@@ -73,6 +75,8 @@ function App() {
           </div>
 
           <Games/>
+
+          <Team />
       </>
   )
 }

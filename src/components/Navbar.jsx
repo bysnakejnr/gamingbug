@@ -6,9 +6,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+
 function Navbar() {
 
     return (
