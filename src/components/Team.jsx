@@ -1,7 +1,32 @@
-import Carousel from "react-multi-carousel";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function Team() {
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 8
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+
+
 return(
+
+
+
    <>
        <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR TEAM</h1>
        <div className="containerTeam">
@@ -34,66 +59,127 @@ return(
     </div></div>
 
 <h1>HELLO</h1>
-       <Carousel
-           additionalTransfrom={0}
-           afterChange={function(previousSlide,_ref){var currentSlide=_ref.currentSlide;_ref.onMove;return alert("previous slide is "+previousSlide+" currentSlide is "+currentSlide)}}
-           arrows
-           autoPlaySpeed={3000}
-           centerMode={false}
-           className=""
-           containerClass="container"
-           dotListClass=""
-           draggable
-           focusOnSelect={false}
-           infinite
-           itemClass=""
-           keyBoardControl
-           minimumTouchDrag={80}
-           pauseOnHover
-           renderArrowsWhenDisabled={false}
-           renderButtonGroupOutside={false}
-           renderDotsOutside={false}
-           responsive={{
-               desktop: {
-                   breakpoint: {
-                       max: 3000,
-                       min: 1024
-                   },
-                   items: 1
-               },
-               mobile: {
-                   breakpoint: {
-                       max: 464,
-                       min: 0
-                   },
-                   items: 1
-               },
-               tablet: {
-                   breakpoint: {
-                       max: 1024,
-                       min: 464
-                   },
-                   items: 1
-               }
-           }}
-           rewind={false}
-           rewindWithAnimation={false}
-           rtl={false}
-           shouldResetAutoplay
-           showDots
-           sliderClass=""
-           slidesToSlide={1}
-           swipeable
+
+       <Carousel className="containerTeam"
+                 swipeable={false}
+                 draggable={false}
+                 showDots={false}
+                 responsive={responsive}
+                 ssr={true} // means to render carousel on server-side.
+                 infinite={true}
+                 autoPlaySpeed={1000}
+                 keyBoardControl={true}
+                 customTransition="all .5"
+                 transitionDuration={500}
+                 containerClass="container-padding-bottom"
+                 removeArrowOnDeviceType={["tablet", "mobile"]}
+                 dotListClass="custom-dot-list-style"
+                 itemClass="carousel-item-padding-20-px"
        >
-           <img url="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-           <img url="https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
-           <img url="https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-           <img url="https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-           <img url="https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-       </Carousel>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Ali-WB.jpg"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Ali Ak<br/>
+                       <span className="pt-12">Co-Founder</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Alperen-2.png"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/BatuhanErsoy-1.png"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/EmreBozkurt-1.png"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Finn.jpg"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Goncalo.JPG"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Hazar-WB.jpg"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Kaan.jpg"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Murat-WB.jpg"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Neil.png"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+           <div className="box">
+               <div className="imgBox"><img
+                   src="../../public/Team/Nisa-1.png"
+                   alt=""/></div>
+               <div className="content">
+                   <h2>Aakash Agrawal<br/>
+                       <span>Chartered Accountant C.A</span></h2>
+               </div>
+           </div>
+
+       </Carousel>;
 
 
-   </> )
+   </>)
 }
 
 
