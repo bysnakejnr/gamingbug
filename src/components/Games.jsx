@@ -1,7 +1,7 @@
 function Games() {
 
     return(
-        <div className="bg-gray-700 p-5">
+        <div className="bg-gray-300 p-5">
             <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR GAMES</h1>
 
             <div className="container-slide">

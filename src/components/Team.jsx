@@ -1,5 +1,7 @@
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import TeamMember from './TeamMember.jsx';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Team() {
     const responsive = {
@@ -21,6 +23,116 @@ function Team() {
             items: 1
         }
     };
+    const settings = {
+        dots: true,
+        speed: 1000,
+        lazyLoad: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+
+
+    };
+
+    const teamMembers = [
+        {
+        name: "Ali Ak",
+        role: "Co-Founder",
+        photo: "../../public/Team/Ali-WB.jpg",
+        id: 1
+        },
+        {
+            name: "Alperen",
+            role: "Designer",
+            photo: "../../public/Team/Alperen-2.png",
+            id: 2
+        },
+        {
+            name: "Batuhan Ersoy",
+            role: "Designer",
+            photo: "../../public/Team/BatuhanErsoy-1.png",
+            id: 2
+        },
+        {
+            name: "Emre Bozkurt",
+            role: "Designer",
+            photo: "../../public/Team/EmreBozkurt-1.png",
+            id: 2
+        },
+        {
+            name: "Finn",
+            role: "Designer",
+            photo: "../../public/Team/Finn.jpg",
+            id: 2
+        },
+        {
+            name: "Goncalo",
+            role: "Designer",
+            photo: "../../public/Team/Goncalo.JPG",
+            id: 2
+        },
+        {
+            name: "Hazar",
+            role: "Co-Founder",
+            photo: "../../public/Team/Hazar-WB.jpg",
+            id: 2
+        },
+        {
+            name: "Kaan",
+            role: "Designer",
+            photo: "../../public/Team/Kaan.jpg",
+            id: 2
+        },
+        {
+            name: "Murat",
+            role: "Designer",
+            photo: "../../public/Team/Murat-WB.jpg",
+            id: 2
+        },
+        {
+            name: "Neil",
+            role: "Designer",
+            photo: "../../public/Team/Neil.png",
+            id: 2
+        },
+        {
+            name: "Nisa",
+            role: "Designer",
+            photo: "../../public/Team/Nisa-1.png",
+            id: 2
+        },
+
+
+
+        ];
 
 
 return(
@@ -28,156 +140,23 @@ return(
 
 
    <>
-       <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR TEAM</h1>
-       <div className="containerTeam">
-           <div className="box">
-           <div className="imgBox">
-               <img src="https://img.freepik.com/free-photo/portrait-handsome-young-man-makes-okay-gesture-demonstrates-agreement-likes-idea-smiles-happily-wears-optical-glasses-yellow-hat-t-shirt-models-indoor-its-fine-thank-you-hand-sign_273609-30676.jpg?size=626&ext=jpg" alt="" />
-           </div>
-           <div className="content">
-               <h2>Karan Singh<br/>
-               <span>Graphic Designer</span></h2>
+
+
+       <div className="">
+           <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR TEAM</h1>
+           <Slider {...settings}>
+               {teamMembers.map(member => (
+
+                   <TeamMember
+                       name={member.name}
+                       photo={member.photo}
+                       role={member.role}
+
+                   />
+
+               ))}
+           </Slider>
        </div>
-   </div>
-   <div className="box">
-       <div className="imgBox">
-           <img src="https://image.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" alt="" />
-       </div>
-       <div className="content">
-           <h2>Dolly Seth<br/>
-               <span>Digital Marketing</span></h2>
-       </div>
-   </div>
-    <div className="box">
-        <div className="imgBox">
-            <img src="https://image.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg" alt="" />
-        </div>
-        <div className="content">
-            <h2>Aakash Agrawal<br/>
-                <span>Chartered Accountant C.A</span></h2>
-        </div>
-    </div></div>
-
-<h1>HELLO</h1>
-
-       <Carousel className="containerTeam"
-                 swipeable={false}
-                 draggable={false}
-                 showDots={false}
-                 responsive={responsive}
-                 ssr={true} // means to render carousel on server-side.
-                 infinite={true}
-                 autoPlaySpeed={1000}
-                 keyBoardControl={true}
-                 customTransition="all .5"
-                 transitionDuration={500}
-                 containerClass="container-padding-bottom"
-                 removeArrowOnDeviceType={["tablet", "mobile"]}
-                 dotListClass="custom-dot-list-style"
-                 itemClass="carousel-item-padding-20-px"
-       >
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Ali-WB.jpg"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Ali Ak<br/>
-                       <span className="pt-12">Co-Founder</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Alperen-2.png"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/BatuhanErsoy-1.png"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/EmreBozkurt-1.png"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Finn.jpg"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Goncalo.JPG"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Hazar-WB.jpg"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Kaan.jpg"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Murat-WB.jpg"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Neil.png"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-           <div className="box">
-               <div className="imgBox"><img
-                   src="../../public/Team/Nisa-1.png"
-                   alt=""/></div>
-               <div className="content">
-                   <h2>Aakash Agrawal<br/>
-                       <span>Chartered Accountant C.A</span></h2>
-               </div>
-           </div>
-
-       </Carousel>;
-
 
    </>)
 }

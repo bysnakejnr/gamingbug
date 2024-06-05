@@ -2,12 +2,13 @@ import { useState } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import games from "./Games.jsx";
 
 
 
 
 
-function Navbar() {
+function Navbar(gamesRef) {
 
     return (
         <>
@@ -32,7 +33,7 @@ function Navbar() {
                                     <div className="flex flex-shrink-0 items-center">
                                         <a href="">
                                         <img
-                                            className="h-10 w-auto"
+                                            className="navlogo h-10 w-auto"
                                             src="../../public/GB-B-2048.png"
                                             alt="Gamingbug"
                                         /></a>
@@ -66,7 +67,9 @@ function Navbar() {
                                                 dark:transition-all hover:duration-300 dark:duration-300"></span>
                                                 About Us
                                             </a>
-                                            <a href="#"
+                                            <button onClick={()=>{
+                                                gamesRef.current?.scrollIntoView()
+                                            }}
                                                className='text-lg relative group text-black text-gray-100 transition-all duration-100
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium
                                                   dark:text-black text-gray-100
@@ -78,7 +81,7 @@ function Navbar() {
                                                 group-hover:duration-100 ease-in-out hover:transition-all
                                                 dark:transition-all hover:duration-300 dark:duration-300"></span>
                                                 Our Games
-                                            </a>
+                                            </button>
                                             <a href="#"
                                                className='text-lg relative group text-black text-gray-100 transition-all duration-100
                                                   hover:text-white rounded-md px-3 py-2 text-sm font-medium

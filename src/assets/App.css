@@ -7,6 +7,19 @@
     font-weight: 400;
     font-style: normal;
 }
+body{
+    overflow-x: hidden;
+}
+
+.navlogo{
+
+    transition: transform .5s ease-in;
+}
+
+
+.navlogo:hover {
+    transform: rotate(360deg);
+}
 
 .urbanist {
                font-family: "Urbanist", sans-serif;
@@ -16,11 +29,11 @@
 }
 
 body{
-    font-family: "Urbanist";
+    font-family: "Urbanist", serif;
 }
 
 .heavy-font{
-    font-family: "Bungee";
+    font-family: "Bungee", serif;
 }
 
 .video-container {
