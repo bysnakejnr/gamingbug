@@ -4,7 +4,7 @@ import Games from "./components/Games.jsx";
 import Team from "./components/Team.jsx";
 import Footer from "./components/Footer.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import {useRef} from "react";
+import {Link} from "react-router-dom";
 
 
 const navigation = [
@@ -18,7 +18,6 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 function App() {
-        const gamesRef = useRef(null);
 
         const handleVideoClick = () => {
             window.location.href = 'https://store.steampowered.com/app/2835500/Grog_n_Glory/';
@@ -30,7 +29,7 @@ function App() {
       <>
 
           <div className="bg-game-pattern border-red h-screen bg-cover min-h-full " style={{"min-height": "1000px"}}>
-              <Navbar ref={gamesRef}/>
+              <Navbar />
               <div className="main-container">
 
                       <h1 className="heavy-font text-8xl">GROG N GLORY!</h1>
@@ -38,7 +37,7 @@ function App() {
 
 <div className="container3 sm:flex-row flex-col">
                           <div className="container2 m-4">
-                                  <video width={"320"} autoPlay loop muted className="image rounded-full opacity-90" onClick={handleVideoClick}>
+                                  <video width={"320"} autoPlay loop muted className="image border-8 border-black rounded-full opacity-90" onClick={handleVideoClick}>
                                       <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
                                       Your browser does not support the video tag.
                                   </video>
@@ -78,18 +77,18 @@ function App() {
               </div>
           </div>
             <div id="games">
-          <Games innerRef={gamesRef} />
+          <Games />
             </div>
           <Team />
           <div className="text-center mt-36 text-4xl bg-gray-300 p-20 mx-auto">
               <h1 className="heavy-font">Have Questions?</h1>
-              <a href="/"
+              <Link to="/contactus"
                  className="mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
 <span
     className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 Contact Us!
 </span>
-              </a>
+              </Link>
           </div>
           <Footer/>
       </>
