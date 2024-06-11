@@ -66,7 +66,6 @@ const ContactUs = () =>{
                                     x: {duration: 1}
                                 }}
                                 className="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl rounded-2xl">
-                                <form action="/action_page.php" method="submit">
                                     <h2 className=" heavy-font font-manrope text-4xl font-semibold leading-10 mb-11 text-black">Send
                                         us a message!</h2>
                                     <input type="text"
