@@ -2,6 +2,7 @@ import TeamMember from './TeamMember.jsx';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from "framer-motion"
 
 function Team() {
     const responsive = {
@@ -142,7 +143,12 @@ return(
    <>
 
 
-       <div className="">
+       <motion.div
+           initial={{ opacity: 0, y: 300 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{type: "spring", stiffness: 100, ease: "easeIn", duration: 0.5}}
+           viewport={{ once: true }}
+           className="" id="team">
            <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR TEAM</h1>
            <Slider {...settings}>
                {teamMembers.map(member => (
@@ -156,7 +162,7 @@ return(
 
                ))}
            </Slider>
-       </div>
+       </motion.div>
 
    </>)
 }

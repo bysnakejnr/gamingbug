@@ -5,14 +5,8 @@ import Team from "./components/Team.jsx";
 import Footer from "./components/Footer.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import {Link} from "react-router-dom";
+import { motion } from "framer-motion"
 
-
-const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
-]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -28,7 +22,7 @@ function App() {
   return (
       <>
 
-          <div className="bg-game-pattern border-red h-screen bg-cover min-h-full " style={{"min-height": "1000px"}}>
+          <div className="bg-game-pattern border-red h-screen bg-cover main-page-div">
               <Navbar />
               <div className="main-container">
 
@@ -47,7 +41,7 @@ function App() {
                                   </div>
                           </div>
                   <div className="container2">
-                  <div className="justify-center items-center sm:text-left text-center"><h1 className="heavy-font text-4xl">Coming <br/>Soon!</h1></div>
+                  <div className="justify-center items-center sm:text-left text-center"><h1 className="heavy-font text-4xl mb-12">Coming <br/>Soon!</h1></div>
                   </div>
 </div>
 
@@ -59,7 +53,7 @@ function App() {
               <div className="trans-background mx-auto max-w-sm mt-72 rounded overflow-hidden shadow-md">
 
                   <div className="px-6 py-4">
-                  <div className="heavy-font text-xl mb-2">Who are we?</div>
+                  <div className="heavy-font text-xl mb-2" id="about">Who are we?</div>
                       <p className="text-gray-700 font-medium text-base">
                           We’re not your average game development studio – we’re a tribe of experienced developers and
                           designers who are passionate about creating games that are both fun and innovative. We don’t
@@ -70,7 +64,7 @@ function App() {
                   </div>
                   <div className="px-6 pt-4 items-end justify-end text-end pb-2">
                       <a href="#"
-                         className="items-end text-end justify-end bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn
+                         className="hidden items-end text-end justify-end bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Learn
                           More</a>
 
                   </div>
@@ -80,7 +74,11 @@ function App() {
           <Games />
             </div>
           <Team />
-          <div className="text-center mt-36 text-4xl bg-gray-300 p-20 mx-auto">
+          <motion.div
+              animate={{x: [800, 0]}}
+              transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.3}}
+
+              className="text-center mt-36 text-4xl bg-gray-300 p-20 mx-auto">
               <h1 className="heavy-font">Have Questions?</h1>
               <Link to="/contactus"
                  className="mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
@@ -89,7 +87,7 @@ function App() {
 Contact Us!
 </span>
               </Link>
-          </div>
+          </motion.div>
           <Footer/>
       </>
   )
