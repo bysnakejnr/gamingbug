@@ -144,9 +144,9 @@ return(
 
 
        <motion.div
-           initial={{ opacity: 0, y: 300 }}
+           initial={{ opacity: 0, y: 150 }}
            whileInView={{ opacity: 1, y: 0 }}
-           transition={{type: "spring", stiffness: 100, ease: "easeIn", duration: 0.5}}
+           transition={{type: "spring", bounce:0.5, ease: "easeIn", delay: 0.5,}}
            viewport={{ once: true }}
            className="" id="team">
            <h1 className="heavy-font text-center text-4xl pt-24 pb-12">OUR TEAM</h1>

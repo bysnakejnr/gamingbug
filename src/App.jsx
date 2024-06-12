@@ -74,10 +74,7 @@ function App() {
           <Games />
             </div>
           <Team />
-          <motion.div
-              animate={{x: [800, 0]}}
-              transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.3}}
-
+          <div
               className="text-center mt-36 text-4xl bg-gray-300 p-20 mx-auto">
               <h1 className="heavy-font">Have Questions?</h1>
               <Link to="/contactus"
@@ -87,7 +84,7 @@ function App() {
 Contact Us!
 </span>
               </Link>
-          </motion.div>
+          </div>
           <Footer/>
       </>
   )
