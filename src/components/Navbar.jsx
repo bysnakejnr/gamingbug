@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 
 
+const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
 
 
 
@@ -34,7 +35,7 @@ function Navbar() {
                                         <a href="/">
                                         <img
                                             className="navlogo h-10 w-auto"
-                                            src="../../public/GB-B-2048.png"
+                                            src={`${photos}/GB-B-2048.png`}
                                             alt="Gamingbug"
                                         /></a>
                                     </div>

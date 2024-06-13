@@ -48,7 +48,7 @@ const Footer = () => {
                         <i className="bi bi-instagram"></i>
 
                     </a>
-                    <a href="#" className="icon-twitter text-gray-400 hover:text-gray-500">
+                    <a href="https://x.com/GamingBugStudio" className="icon-twitter text-gray-400 hover:text-gray-500">
                         <span className="sr-only">Twitter</span>
                         <i className="bi bi-twitter-x"></i>
 

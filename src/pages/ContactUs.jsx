@@ -1,5 +1,8 @@
 import { motion } from "framer-motion"
 
+
+const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
+
 const ContactUs = () =>{
 
 
@@ -7,7 +10,7 @@ const ContactUs = () =>{
     return(
         <>
             <div>
-                <a href="/"> <img src="../../public/gbugicon-black.png" className="sm:w-1/6 md:w-1/6 lg:w-1/12 w-24 mx-auto justify-center items-center self-center content-center" alt="logo"/></a></div>
+                <a href="/"> <img src={`${photos}/gbugicon-black.png`} className="sm:w-1/6 md:w-1/6 lg:w-1/12 w-24 mx-auto justify-center items-center self-center content-center" alt="logo"/></a></div>
             <motion.div animate={{x: [800, 0]}}
                         transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.5}}
 
