@@ -4,6 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion"
 
+
+const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
+
+
 function Team() {
     const responsive = {
         superLargeDesktop: {
@@ -67,67 +71,61 @@ function Team() {
         {
         name: "Ali Ak",
         role: "Co-Founder",
-        photo: "../../public/Team/Ali-WB.jpg",
+        photo: `${photos}/Team/Ali-WB.jpg`,
         id: 1
         },
         {
             name: "Alperen",
             role: "Designer",
-            photo: "../../public/Team/Alperen-2.png",
+            photo: `${photos}/Team/Alperen-2.png`,
             id: 2
         },
         {
             name: "Batuhan Ersoy",
             role: "Designer",
-            photo: "../../public/Team/BatuhanErsoy-1.png",
+            photo: `${photos}/Team/BatuhanErsoy-1.png`,
             id: 2
         },
         {
             name: "Emre Bozkurt",
             role: "Designer",
-            photo: "../../public/Team/EmreBozkurt-1.png",
-            id: 2
-        },
-        {
-            name: "Finn",
-            role: "Designer",
-            photo: "../../public/Team/Finn.jpg",
+            photo: `${photos}/Team/EmreBozkurt-1.png`,
             id: 2
         },
         {
             name: "Goncalo",
             role: "Designer",
-            photo: "../../public/Team/Goncalo.JPG",
+            photo: `${photos}/Team/Goncalo.JPG`,
             id: 2
         },
         {
             name: "Hazar",
             role: "Co-Founder",
-            photo: "../../public/Team/Hazar-WB.jpg",
+            photo: `${photos}/Team/Hazar-WB.jpg`,
             id: 2
         },
         {
             name: "Kaan",
             role: "Designer",
-            photo: "../../public/Team/Kaan.jpg",
+            photo: `${photos}/Team/Kaan.jpg`,
             id: 2
         },
         {
             name: "Murat",
             role: "Designer",
-            photo: "../../public/Team/Murat-WB.jpg",
+            photo: `${photos}/Team/Murat-WB.jpg`,
             id: 2
         },
         {
             name: "Neil",
             role: "Designer",
-            photo: "../../public/Team/Neil.png",
+            photo: `${photos}/Team/Neil.png`,
             id: 2
         },
         {
             name: "Nisa",
             role: "Designer",
-            photo: "../../public/Team/Nisa-1.png",
+            photo: `${photos}/Team/Nisa-1.png`,
             id: 2
         },
 

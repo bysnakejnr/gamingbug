@@ -1,3 +1,6 @@
+const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
+
+
 function Games() {
 
     return(
@@ -53,7 +56,7 @@ function Games() {
                         <p className="text-s max-w-96 sm:text-xl">
                             Go to one of our social media channels to learn more.</p>
                         <img
-                            src="../../public/gameimage4.png" className="w-44 mt-12"/>
+                            src={`${photos}/gameimage4.png`} className="w-44 mt-12"/>
                     </div>
                 </li>
             </ul>

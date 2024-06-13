@@ -13,6 +13,7 @@ function classNames(...classes) {
 }
 function App() {
 
+        const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
         const handleVideoClick = () => {
             window.location.href = 'https://store.steampowered.com/app/2835500/Grog_n_Glory/';
         };
@@ -32,7 +33,7 @@ function App() {
 <div className="container3 sm:flex-row flex-col">
                           <div className="container2 m-4">
                                   <video width={"320"} autoPlay loop muted className="image border-8 border-black rounded-full opacity-90" onClick={handleVideoClick}>
-                                      <source src="./public/grog-gameplay.mp4" type="video/mp4"/>
+                                      <source src={`${photos}grog-gameplay.mp4`} type="video/mp4"/>
                                       Your browser does not support the video tag.
                                   </video>
                                   <div className="overlay" onClick={handleVideoClick}>
