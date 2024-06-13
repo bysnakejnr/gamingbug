@@ -7,18 +7,18 @@ const ContactUs = () =>{
     return(
         <>
             <div>
-                <a href="/"> <img src="../../public/gbugicon-black.png" className="sm:w-1/12 w-24 mx-auto justify-center items-center self-center content-center" alt="logo"/></a></div>
+                <a href="/"> <img src="../../public/gbugicon-black.png" className="sm:w-1/6 md:w-1/6 lg:w-1/12 w-24 mx-auto justify-center items-center self-center content-center" alt="logo"/></a></div>
             <motion.div animate={{x: [800, 0]}}
                         transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.5}}
 
-                        className="h-screen border-black mx-auto justify-center items-center self-center content-center">
+                        className="h-screen lg:-my-32 mx-auto justify-center items-center self-center content-center">
 
                 <section className="content-center">
 
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="flex flex-row justify-between border">
+                        <div className="flex flex-row justify-between">
                             <div className="">
-                                <a href="/" className="ms-2 mt-10 text-xl">
+                                <a href="/" className="ms-2 mt-10 sm:text-lg">
                                     <i className="bi bi-arrow-bar-left me-2"></i>Go back to main page</a>
                             </div>
                         </div>

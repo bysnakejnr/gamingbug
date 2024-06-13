@@ -57,7 +57,42 @@ function Games() {
                             Go to one of our social media channels to learn more.</p>
                         <img
                             src={`${photos}/gameimage4.png`} className="w-44 mt-12"/>
-                    </div>
+                        <div className="flex justify-center mt-8 space-x-6">
+                            <a href="https://www.linkedin.com/company/gamingbug/?viewAsMember=true "
+                               className="icon-linkedin text-black">
+                                <span className="sr-only">Linkedin</span>
+                                <i className="bi bi-linkedin"></i>
+
+                            </a>
+                            <a href="https://www.instagram.com/gamingbugstudio"
+                               className="icon-instagram text-black">
+                                <span className="sr-only">Instagram</span>
+                                <i className="bi bi-instagram"></i>
+
+                            </a>
+                            <a href="#" className="icon-twitter text-black hover:text-gray-500">
+                                <span className="sr-only">Twitter</span>
+                                <i className="bi bi-twitter-x"></i>
+
+                            </a>
+                            <a href="https://discord.gg/BVZmKNvE"
+                               className="icon-discord text-black ">
+                                <span className="sr-only">Discord</span>
+                                <i className="bi bi-discord"></i>
+
+                            </a>
+                            <a href="https://store.steampowered.com/app/2835500/Grog_n_Glory/"
+                               className="icon-steam text-black hover:text-gray-500">
+                                <span className="sr-only">Steam</span>
+                                <i className="bi bi-steam"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@GamingBugStudio"
+                               className="icon-youtube text-black">
+                                <span className="sr-only">Steam</span>
+                                <i className="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                        </div>
                 </li>
             </ul>
             </div>
