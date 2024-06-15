@@ -1,16 +1,144 @@
 import { motion } from "framer-motion"
-
+import { useRef, useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Footer from "../components/Footer.jsx";
 
 const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
 
 const ContactUs = () =>{
+    const [showModal, setShowModal] = useState(false);
+    const [showModalError, setShowModalError] = useState(false);
+    useEffect(() => emailjs.init("BfSJv0_bhkMAL7S1Q"), []);
+    const emailRef = useRef();
+    const nameRef = useRef();
+    const phoneRef = useRef();
+    const messageRef = useRef();
+    const [loading, setLoading] = useState(false);
 
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const serviceId = "service_wb6we5asss";
+        const templateId = "template_psnvoq8";
+        try {
+            setLoading(true);
+            await emailjs.send(serviceId, templateId, {
+                name: nameRef.current.value,
+                email: emailRef.current.value,
+                phone: phoneRef.current.value==="undefined" ? "Not Provided" : phoneRef.current.value,
+                message: messageRef.current.value
+            });
+            setShowModal(true)
+        } catch (error) {
+            console.log(error);
+            setShowModalError(true)
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return(
         <>
+
+
+            {showModal ? (
+                <>
+                    <div
+                        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                    >
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                            {/*content*/}
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                {/*header*/}
+                                <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                    <h3 className="text-3xl font-semibold">
+                                        Message sent successfully!
+                                    </h3>
+                                    <button
+                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                                    </button>
+                                </div>
+                                {/*body*/}
+                                <div className="relative p-6 flex-auto">
+                                    <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                        Thanks for reaching out, your message is very important to us. We'll get back to you as soon as we can!
+                                    </p>
+                                </div>
+                                {/*footer*/}
+                                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                    <button
+                                        className="text-white bg-black rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        Done
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+            ) : null}
+
+
+            {showModalError ? (
+                <>
+                    <div
+                        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                    >
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                            {/*content*/}
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                {/*header*/}
+                                <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                    <h3 className="text-3xl font-semibold">
+                                        Message was not delivered!
+                                    </h3>
+                                    <button
+                                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        onClick={() => setShowModalError(false)}
+                                    >
+                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                                    </button>
+                                </div>
+                                {/*body*/}
+                                <div className="relative p-6 flex-auto">
+                                    <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                        We know your message is important, sorry it wasn't delivered at this time. Please try again later.
+                                    </p>
+                                </div>
+                                {/*footer*/}
+                                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                    <button
+                                        className="text-white bg-red-900 rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowModalError(false)}
+                                    >
+                                        Okay
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+            ) : null}
+
+
+
             <div>
-                <a href="/"> <img src={`${photos}/gbugicon-black.png`} className="sm:w-1/6 md:w-1/6 lg:w-1/12 w-24 mx-auto justify-center items-center self-center content-center" alt="logo"/></a></div>
+                <a href="/"> <img src={`${photos}/gbugicon-black.png`}
+                                  className="sm:w-1/6 md:w-1/6 lg:w-1/12 w-24 mx-auto justify-center items-center self-center content-center"
+                                  alt="logo"/></a></div>
             <motion.div animate={{x: [800, 0]}}
                         transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.5}}
 
@@ -31,7 +159,7 @@ const ContactUs = () =>{
                                     <div className="relative h-full">
                                         <img src="../../public/contactusimage.png"
                                              alt="ContactUs tailwind section"
-                                             className="w-full h-full object-contain lg:rounded-l-2xl rounded-2xl bg-blend-multiply"
+                                             className="w-full h-full object-cover lg:rounded-l-2xl rounded-2xl bg-blend-multiply"
                                              style={{backgroundColor: '#C6DBCF'}}/>
                                         <h1 className="font-manrope text-black text-4xl font-bold leading-10 absolute top-11 left-11 heavy-font">Contact
                                             us</h1>
@@ -75,30 +203,37 @@ const ContactUs = () =>{
                                     x: {duration: 1}
                                 }}
                                 className="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl rounded-2xl">
+
                                 <h2 className=" heavy-font font-manrope text-4xl font-semibold leading-10 mb-11 text-black">Send
                                     us a message!</h2>
-                                <input type="text"
-                                       className="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                       placeholder="Name"/>
-                                <input type="text"
-                                       className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                       placeholder="Email"/>
-                                <input type="text"
-                                       className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                       placeholder="Phone"/>
+                                <form onSubmit={handleSubmit}>
+                                    <input ref={nameRef} type="text"
+                                           className="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                                           placeholder="Name" required/>
+                                    <input ref={emailRef} type="email" required
+                                           className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                                           placeholder="Email"/>
+                                    <input ref={phoneRef} type="tel" id="phone" name="phone"
+                                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                           className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                                           placeholder="Phone"/>
 
-                                <input type="text"
-                                       className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                       placeholder="Message"/>
-                                <button
-                                    className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-black shadow-sm">Send
-                                </button>
+                                    <input ref={messageRef} type="text"
+                                           className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                                           placeholder="Message" required/>
+
+
+                                    <button type="submit" disabled={loading}
+                                            className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-black shadow-sm">Send
+                                    </button>
+                                </form>
                             </motion.div>
                         </div>
                     </div>
                 </section>
             </motion.div>
 
+            <Footer />
         </>
     )
 }

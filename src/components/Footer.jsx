@@ -11,24 +11,24 @@ const Footer = () => {
             <div id="home" className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                 <nav className="flex flex-wrap justify-center -mx-5 -my-2">
                     <div className="px-5 py-2">
-                        <a href="#home" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <Link to="/" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                             Home
-                        </a>
+                        </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <a href="#about" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <a href="/#about" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                             About
                         </a>
                     </div>
                     <div className="px-5 py-2">
-                        <a href="#team" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                            Team
-                        </a>
+                        <Link to="/#games" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                            Games
+                        </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <a href="#games" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                            Games
-                        </a>
+                        <Link to="/#team" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                            Team
+                        </Link>
                     </div>
                     <div className="px-5 py-2">
                         <Link to="/contactus" className="text-base leading-6 text-gray-500 hover:text-gray-900">
