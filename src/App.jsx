@@ -23,11 +23,11 @@ function App() {
   return (
       <>
 
-          <div className="bg-game-pattern border-red h-screen bg-cover main-page-div">
+          <div className="bg-game-pattern border-red h-screen bg-cover overflow-x-hidden main-page-div">
               <Navbar />
               <div className="main-container">
 
-                      <h1 className="heavy-font text-8xl">GROG N GLORY!</h1>
+                      <h1 className="heavy-font : xl:text-8xl 2xl:text-8xl md:text-8xl lg:text-8xl sm:text-8xl text-6xl">GROG N GLORY!</h1>
 
 
 <div className="container3 sm:flex-row flex-col">

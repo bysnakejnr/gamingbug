@@ -24,7 +24,7 @@ const ContactUs = () =>{
             await emailjs.send(serviceId, templateId, {
                 name: nameRef.current.value,
                 email: emailRef.current.value,
-                phone: phoneRef.current.value==="undefined" ? "Not Provided" : phoneRef.current.value,
+                phone: phoneRef.current.value,
                 message: messageRef.current.value
             });
             setShowModal(true)
