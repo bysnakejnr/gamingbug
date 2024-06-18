@@ -157,7 +157,7 @@ const ContactUs = () =>{
                             <div className="lg:mb-0 mb-10">
                                 <div className="group w-full h-full">
                                     <div className="relative h-full">
-                                        <img src={`${photos}public/contactusimage.png`}
+                                        <img src={`${photos}contactusimage.png`}
                                              alt="ContactUs tailwind section"
                                              className="w-full h-full object-cover lg:rounded-l-2xl rounded-2xl bg-blend-multiply"
                                              style={{backgroundColor: '#C6DBCF'}}/>
