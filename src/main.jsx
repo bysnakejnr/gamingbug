@@ -22,7 +22,11 @@ const router = createBrowserRouter([
         path: "/contactus",
         element: <ContactUs />,
         errorElement: <ErrorPage />
-    }
+    },
+    {
+        path : "/*",
+        element : <ErrorPage/>
+}
 ]);
 
 

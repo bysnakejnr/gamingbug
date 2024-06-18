@@ -142,7 +142,7 @@ const ContactUs = () =>{
             <motion.div animate={{x: [800, 0]}}
                         transition={{type: "spring", stiffness: 100, ease: "easeOut", duration: 0.5}}
 
-                        className="h-screen lg:-my-32 mx-auto justify-center items-center self-center content-center">
+                        className="min-h-svh lg:-my-32 mx-auto justify-center items-center self-center content-center">
 
                 <section className="content-center">
 
@@ -164,7 +164,7 @@ const ContactUs = () =>{
                                         <h1 className="font-manrope text-black text-4xl font-bold leading-10 absolute top-11 left-11 heavy-font">Contact
                                             us</h1>
                                         <div className="absolute bottom-0 w-full lg:p-11 p-5">
-                                            <div className="bg-white rounded-lg p-6 block">
+                                            <div className="bg-white rounded-lg p-2 sm:p-6 md:p-6 lg:p-6 xl:p-6 block">
 
                                                 <a href="javascript:" className="flex items-center mb-6">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -174,7 +174,7 @@ const ContactUs = () =>{
                                                             stroke="#000000" strokeWidth="2"
                                                             strokeLinecap="round"/>
                                                     </svg>
-                                                    <h5 className="text-black text-base font-normal leading-6 ml-5">gamingbug@support.co</h5>
+                                                    <h5 className="text-black sm:text-base md:text-base lg:text-base xl:text-base text-sm font-normal leading-6 ml-5">gamingbug@support.co</h5>
                                                 </a>
                                                 <a href="javascript:" className="flex items-center">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -186,7 +186,7 @@ const ContactUs = () =>{
                                                             d="M17.5 11.6148C17.5 13.0531 16.3807 14.219 15 14.219C13.6193 14.219 12.5 13.0531 12.5 11.6148C12.5 10.1765 13.6193 9.01058 15 9.01058C16.3807 9.01058 17.5 10.1765 17.5 11.6148Z"
                                                             stroke="#000000" strokeWidth="2"/>
                                                     </svg>
-                                                    <h5 className="text-black text-base font-normal leading-6 ml-5">Gaming
+                                                    <h5 className="text-black sm:text-base md:text-base lg:text-base xl:text-base text-sm font-normal leading-6 ml-5">Gaming
                                                         bug Adresi</h5>
                                                 </a>
                                             </div>
