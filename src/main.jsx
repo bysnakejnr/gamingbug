@@ -15,13 +15,11 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />
+    element: <App />
   },
     {
         path: "/contactus",
-        element: <ContactUs />,
-        errorElement: <ErrorPage />
+        element: <ContactUs />
     },
     {
         path: "*",
