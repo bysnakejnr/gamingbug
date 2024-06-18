@@ -2,6 +2,9 @@ import { motion } from "framer-motion"
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Footer from "../components/Footer.jsx";
+import PhoneInput from 'react-phone-number-input'
+import Input from 'react-phone-number-input/input'
+import 'react-phone-number-input/style.css'
 
 const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
 
@@ -14,10 +17,11 @@ const ContactUs = () =>{
     const phoneRef = useRef();
     const messageRef = useRef();
     const [loading, setLoading] = useState(false);
+    const [phone, setPhone] = useState();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const serviceId = "service_wb6we5asss";
+        const serviceId = "service_wb6we5a";
         const templateId = "template_psnvoq8";
         try {
             setLoading(true);
@@ -158,7 +162,7 @@ const ContactUs = () =>{
                                 <div className="group w-full h-full">
                                     <div className="relative h-full">
                                         <img src={`${photos}contactusimage.png`}
-                                             alt="ContactUs tailwind section"
+                                             alt="ContactUs-bg"
                                              className="w-full h-full object-cover lg:rounded-l-2xl rounded-2xl bg-blend-multiply"
                                              style={{backgroundColor: '#C6DBCF'}}/>
                                         <h1 className="font-manrope text-black text-4xl font-bold leading-10 absolute top-11 left-11 heavy-font">Contact
@@ -166,7 +170,7 @@ const ContactUs = () =>{
                                         <div className="absolute bottom-0 w-full lg:p-11 p-5">
                                             <div className="bg-white rounded-lg p-2 sm:p-6 md:p-6 lg:p-6 xl:p-6 block">
 
-                                                <a href="javascript:" className="flex items-center mb-6">
+                                                <a href="#" className="flex items-center mb-6">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -176,7 +180,7 @@ const ContactUs = () =>{
                                                     </svg>
                                                     <h5 className="text-black sm:text-base md:text-base lg:text-base xl:text-base text-sm font-normal leading-6 ml-5">gamingbug@support.co</h5>
                                                 </a>
-                                                <a href="javascript:" className="flex items-center">
+                                                <a href="#" className="flex items-center">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -209,18 +213,25 @@ const ContactUs = () =>{
                                 <form onSubmit={handleSubmit}>
                                     <input ref={nameRef} type="text"
                                            className="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                           placeholder="Name" required/>
+                                           placeholder="Name*" required/>
                                     <input ref={emailRef} type="email" required
                                            className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                           placeholder="Email"/>
-                                    <input ref={phoneRef} type="tel" id="phone" name="phone"
-                                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                           className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                           placeholder="Phone"/>
+                                           placeholder="Email*"/>
+                                    {/*<input ref={phoneRef} type="tel" id="phone" name="phone"*/}
+                                    {/*       pattern="[0-9]{3}[0-9]{3}[0-9]{4}"*/}
+                                    {/*       className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"*/}
+                                    {/*       placeholder="Phone"/>*/}
+
+                                    <Input ref={phoneRef}
+                                        initialvalueformat="national"
+                                        value={phone}
+                                           placeholder="Phone"
+                                           maxLength="17"
+                                        onChange={setPhone} className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"/>
 
                                     <input ref={messageRef} type="text"
                                            className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-                                           placeholder="Message" required/>
+                                           placeholder="Message*" required/>
 
 
                                     <button type="submit" disabled={loading}

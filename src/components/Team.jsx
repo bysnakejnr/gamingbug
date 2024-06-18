@@ -155,6 +155,7 @@ return(
                        name={member.name}
                        photo={member.photo}
                        role={member.role}
+                       key={member.id}
 
                    />
 
