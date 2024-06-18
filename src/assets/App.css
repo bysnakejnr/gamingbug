@@ -197,6 +197,7 @@ body{
 .card-body {
     box-sizing: border-box;
     padding: 30px;
+    overflow:hidden;
     border-radius: 50px;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
     height: var(--cardHeight);
