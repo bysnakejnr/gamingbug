@@ -9,7 +9,6 @@ function TeamMember({name, role, photo}) {
                 <div className="containerTeam mt-6 mb-6" >
                     <div className="box relative">
                         <div className="imgBox">
-
                             <img className="rounded-full border-black border-4 shadow-black shadow-lg"
                                                      src={photo}
                                                      alt=""/></div>

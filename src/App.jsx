@@ -32,7 +32,7 @@ function App() {
 
 <div className="container3 sm:flex-row flex-col">
                           <div className="container2 m-4">
-                                  <video width={"320"} autoPlay loop muted className="image border-8 border-black rounded-full opacity-90" onClick={handleVideoClick}>
+                                  <video width={"320"} autoPlay loop muted className="image border-8 border-black rounded-full opacity-90" onClick={handleVideoClick} playsInline>
                                       <source src={`${photos}grog-gameplay.mp4`} type="video/mp4"/>
                                       Your browser does not support the video tag.
                                   </video>
