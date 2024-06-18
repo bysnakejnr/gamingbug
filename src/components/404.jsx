@@ -1,5 +1,8 @@
 import '../assets/404.css';
 
+const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
+
+
 const ErrorPage = () =>{
 
 
@@ -8,7 +11,7 @@ const ErrorPage = () =>{
         <div className="bgerror flex flex-col h-screen items-center justify-center">
 
 
-            <div className="justify-center flex"><img src="../../public/404e.png" className="w-1/2"/></div>
+            <div className="justify-center flex"><img src={`${photos}public/404e.png`} className="w-1/2" alt="404 image"/></div>
                <div className="mt-12"> <h1 className="heavy-font text-white text-4xl">OUT OF EXISTENCE</h1></div>
             <div><p className="text-white mt-2">Sorry! This page doesn't exist. </p></div>
             <div>
