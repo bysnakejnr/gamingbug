@@ -69,65 +69,80 @@ function Team() {
 
     const teamMembers = [
         {
-        name: "Ali Ak",
-        role: "Co-Founder",
+        name: "Ali",
+        surname : "Ak",
+        role: `Lead 3D Artist & Co-Founder`,
         photo: `${photos}/Team/Ali-WB.jpg`,
         id: 1
         },
         {
             name: "Alperen",
-            role: "Designer",
+            surname : "Kircanogullari",
+            role: "Lead Game Designer",
             photo: `${photos}/Team/Alperen-2.png`,
             id: 2
         },
         {
-            name: "Batuhan Ersoy",
-            role: "Designer",
+            name: "Batuhan",
+            surname : "Ersoy",
+            role: "Systems Designer",
             photo: `${photos}/Team/BatuhanErsoy-1.png`,
-            id: 2
+            id: 3
         },
         {
-            name: "Emre Bozkurt",
-            role: "Designer",
+            name: "Emre",
+            surname : "Bozkurt",
+            role: "Combat & Event Designer",
             photo: `${photos}/Team/EmreBozkurt-1.png`,
-            id: 2
+            id: 4
         },
         {
             name: "Goncalo",
-            role: "Designer",
+            surname : "Silvestre",
+            role: "Concept Artist",
             photo: `${photos}/Team/Goncalo.JPG`,
-            id: 2
+            id: 5
         },
         {
             name: "Hazar",
-            role: "Co-Founder",
+            surname : "Salis",
+            role: "Manager & Co-Founder",
             photo: `${photos}/Team/Hazar-WB.jpg`,
-            id: 2
+            id: 6
         },
         {
             name: "Kaan",
-            role: "Designer",
+            surname : "Altay",
+            role: "Game Developer",
             photo: `${photos}/Team/Kaan.jpg`,
-            id: 2
+            id: 7
         },
         {
-            name: "Murat",
-            role: "Designer",
-            photo: `${photos}/Team/Murat-WB.jpg`,
-            id: 2
-        },
-        {
-            name: "Neil",
-            role: "Designer",
-            photo: `${photos}/Team/Neil.png`,
-            id: 2
+            name: "Muhammed Altekin",
+            role: "Lead Game Developer",
+            photo: `${photos}/Team/Muhammed.png`,
+            id: 9
         },
         {
             name: "Nisa",
-            role: "Designer",
+            surname : "Yilmaz",
+            role: "UI/UX Designer",
             photo: `${photos}/Team/Nisa-1.png`,
-            id: 2
+            id: 10
         },
+        {
+            name: "Neil Simbulan",
+            role: `Concept Artist`,
+            photo: `${photos}/Team/Neil.png`,
+            id: 11
+        },
+        {
+            name: "Micah Foster",
+            role: `Sounds Designer`,
+            photo: `${photos}/Team/Micah.png`,
+            id: 12
+        },
+
 
 
 
@@ -153,6 +168,7 @@ return(
 
                    <TeamMember
                        name={member.name}
+                       surname={member.surname}
                        photo={member.photo}
                        role={member.role}
                        key={member.id}

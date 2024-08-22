@@ -1,6 +1,6 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function TeamMember({name, role, photo}) {
+function TeamMember({name, surname, role, photo}) {
 
 
 
@@ -13,7 +13,7 @@ function TeamMember({name, role, photo}) {
                                                      src={photo}
                                                      alt=""/></div>
                         <div className="content">
-                            <h2>{name}<br/>
+                            <h2>{name} {surname}<br/>
                                 <span className="pt-12">{role}</span></h2>
                         </div>
                     </div>
