@@ -69,7 +69,7 @@ function Team() {
 
     const teamMembers = [
         {
-        name: "Ali",
+        name: "Ali Burak",
         surname : "Ak",
         role: `Lead 3D Artist & Co-Founder`,
         photo: `${photos}/Team/Ali-WB.jpg`,
