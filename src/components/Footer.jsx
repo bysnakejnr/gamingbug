@@ -2,7 +2,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import {Link} from "react-router-dom";
 
 
-const Footer = () => {
+const Footer = ({ onGameClick, onTeamClick }) => {
 
     let year = new Date().getFullYear();
 
@@ -21,12 +21,12 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="/#games" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <Link to="/#games" className="text-base leading-6 text-gray-500 hover:text-gray-900" onClick={onGameClick}>
                             Games
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="/#team" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <Link to="/#team" className="text-base leading-6 text-gray-500 hover:text-gray-900" onClick={onTeamClick}>
                             Team
                         </Link>
                     </div>

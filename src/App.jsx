@@ -1,4 +1,5 @@
 import './assets/App.css'
+import React, { useRef } from 'react';
 import Navbar from "./components/Navbar.jsx";
 import Games from "./components/Games.jsx";
 import Team from "./components/Team.jsx";
@@ -13,6 +14,24 @@ function classNames(...classes) {
 }
 function App() {
 
+
+        const gamesRef = useRef(null);
+        const teamRef = useRef(null);
+
+    // Function to handle the scroll
+    const scrollToGames = (event) => {
+        event.preventDefault(); // Prevent the default <a> behavior
+        if (gamesRef.current) {
+            gamesRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    const scrollToTeam = (event) => {
+        event.preventDefault(); // Prevent the default <a> behavior
+        if (teamRef.current) {
+            teamRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
         const photos = import.meta.env.MODE === "development" ? "http://localhost:5173/public/" : "https://main--gamingbug.netlify.app/";
         const handleVideoClick = () => {
             window.location.href = 'https://store.steampowered.com/app/2835500/Grog_n_Glory/';
@@ -24,37 +43,38 @@ function App() {
       <>
 
           <div className="bg-game-pattern border-red h-screen bg-cover overflow-x-hidden main-page-div">
-              <Navbar />
+              <Navbar/>
               <div className="main-container">
 
-                      <h1 className="heavy-font : xl:text-8xl 2xl:text-8xl md:text-8xl lg:text-8xl sm:text-8xl text-6xl">GROG N GLORY!</h1>
+                  <h1 className="heavy-font : xl:text-8xl 2xl:text-8xl md:text-8xl lg:text-8xl sm:text-8xl text-6xl">GROG
+                      N GLORY!</h1>
 
 
-<div className="container3 sm:flex-row flex-col">
-                          <div className="container2 m-4">
-                                  <video width={"320"} autoPlay loop muted className="image border-8 border-black rounded-full opacity-90" onClick={handleVideoClick} playsInline>
-                                      <source src={`${photos}grog-gameplay.mp4`} type="video/mp4"/>
-                                      Your browser does not support the video tag.
-                                  </video>
-                                  <div className="overlay" onClick={handleVideoClick}>
+                  <div className="container3 sm:flex-row flex-col">
+                      <div className="container2 m-4">
+                          <video width={"320"} autoPlay loop muted
+                                 className="image border-8 border-black rounded-full opacity-90"
+                                 onClick={handleVideoClick} playsInline>
+                              <source src={`${photos}grog-gameplay.mp4`} type="video/mp4"/>
+                              Your browser does not support the video tag.
+                          </video>
+                          <div className="overlay" onClick={handleVideoClick}>
 
-                                      <div className="text"><i className="bi bi-steam mx-2"></i>Go to game</div>
-                                  </div>
+                              <div className="text"><i className="bi bi-steam mx-2"></i>Go to game</div>
                           </div>
-                  <div className="container2">
-                  <div className="justify-center items-center sm:text-left text-center"><h1 className="heavy-font text-4xl mb-12">Coming <br/>Soon!</h1></div>
+                      </div>
+                      <div className="container2">
+                          <div className="justify-center items-center sm:text-left text-center"><h1
+                              className="heavy-font text-4xl mb-12">Coming <br/>Soon!</h1></div>
+                      </div>
                   </div>
-</div>
-
-
-
 
 
               </div>
               <div className="trans-background mx-auto max-w-sm mt-72 rounded overflow-hidden shadow-md">
 
                   <div className="px-6 py-4">
-                  <div className="heavy-font text-xl mb-2" id="about">Who are we?</div>
+                      <div className="heavy-font text-xl mb-2" id="about">Who are we?</div>
                       <p className="text-gray-700 font-medium text-base">
                           We’re not your average game development studio – we’re a tribe of experienced developers and
                           designers who are passionate about creating games that are both fun and innovative. We don’t
@@ -71,22 +91,25 @@ function App() {
                   </div>
               </div>
           </div>
-            <div id="games">
-          <Games />
-            </div>
-          <Team />
+
+          <section id="games" ref={gamesRef}>
+              <Games/>
+          </section>
+          <section id="team" ref={teamRef}>
+          <Team/>
+          </section>
           <div
               className="text-center mt-36 text-4xl bg-gray-300 p-20 mx-auto">
               <h1 className="heavy-font">Have Questions?</h1>
               <Link to="/contactus"
-                 className="mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    className="mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
 <span
     className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 Contact Us!
 </span>
               </Link>
           </div>
-          <Footer/>
+          <Footer onGameClick={scrollToGames} onTeamClick={scrollToTeam} />
       </>
   )
 }
