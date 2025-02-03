@@ -147,6 +147,8 @@ body{
 }
 
 #cards {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden;
     list-style: none;
     padding-left: 0;
     display: grid;
@@ -175,6 +177,8 @@ body{
 .card {
     position: sticky;
     top: 0;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+      overflow-x: hidden;
     padding-top: calc(var(--index) * var(--cardTopPadding));
 }
 
